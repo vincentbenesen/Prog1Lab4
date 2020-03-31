@@ -6,7 +6,8 @@
 package lab4;
 
 /**
- *
+ * Program that count how many multiples of seven are
+ * between 33 and 97
  * @author vincentbenesen
  */
 public class BookQuestion48 {
