@@ -8,9 +8,10 @@ package lab4;
 import java.util.Scanner;
 
 /**
- * Program to validate email addresses
- * Program that uses a loop to go over each character, and find an @ sign, 
- * followed by two or more words separated by dots.
+ * Program to validate email addresses Program that uses a loop to go over each
+ * character, and find an @ sign, followed by two or more words separated by
+ * dots.
+ *
  * @author vincent benesen
  */
 public class ValidatingEMail {
@@ -24,25 +25,24 @@ public class ValidatingEMail {
         int letters = 0;
         int isValid = 0;
         int comparedLetters = lengthOfEmail;
-        int dot1 = eMail.indexOf('.');
-        int dot2 = eMail.indexOf('.');
         char hasAt = '@';
+        char hasdot = '.';
 
-        while (letters < comparedLetters) {
+        while (letters < comparedLetters){
             if (eMail.charAt(letters) == hasAt) {
                 isValid++;
             }
-            if (eMail.charAt(letters) == dot1) {
+            if (eMail.charAt(letters) == hasdot) {
                 isValid++;
             }
-            if (eMail.charAt(letters) == dot2) {
-                isValid++;
+            if (eMail.endsWith(".")) {
+                isValid--;
             }
             letters++;
-        }
-        if (isValid == 3) {
+        }        
+        if (isValid == 3 || isValid == 2) {
             System.out.println("It is a valid email");
-        } else if (isValid != 3) {
+        } else  {
             System.out.println("It is not a valid email");
         }
     }
